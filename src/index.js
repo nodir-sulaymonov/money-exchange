@@ -10,6 +10,11 @@ module.exports = function makeExchange(currency) {
     if (currency <= 0) {
         return result
     }
+    if(currency > 10000){
+        return {
+            error: "You are rich, my friend! We don't have so much coins for exchange"
+        }
+    }
     while (currency !== 0) {
         if (currency >= 50) {
             currency -= 50;
